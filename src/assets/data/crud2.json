@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "campo1": "dddddddddd",
+        "campo2": "eeeeeeeeeee",
+        "campo3": "fffffffff",
+        "categoria": { "id": 1, "descricao": "AAAAAAAAAA" }
+    }
+]

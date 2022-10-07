@@ -1,0 +1,60 @@
+<style>
+    table { font-family: arial; border-collapse: collapse; width: 100%; font-size: 12px; }
+    
+    th
+    { 
+        border: 1px solid #dddddd; background-color: #000000; font-size: 13px;
+        color: #ffffff; font-weight: bold; text-align: center; padding: 8px;
+    }
+    
+    td { border: 1px solid #dddddd; text-align: left; padding: 8px; }
+
+    tr:nth-child(even) { background-color: #dddddd; }
+
+    .titulo { padding-bottom: 20px; text-align: center; font-family: arial; font-size: 20px; color: black; text-decoration: underline; }
+
+    .pagina { padding: 2px 8px 2px 8px; color:#666666; font-size: 12px; font-weight: bold; text-decoration: none; }
+</style>
+
+<div>
+    <div class="titulo">CRUD 1</div>
+    <table>
+        <thead>
+        <tr>
+            <th style="width:30%;">Campo 1</th>
+            <th style="width:30%;">Campo 2</th>
+            <th style="width:30%;">Campo 3</th>
+            <th colspan="2"></th>
+        </tr>
+        </thead>
+        <tbody id="myTable">
+        <tr *ngFor="let item of carga">
+            <td>{{item.campo1}}</td>
+            <td>{{item.campo2}}</td>
+            <td>{{item.campo3}}</td>
+            <td style="width:5%;text-align:center;">
+                <a class="nav-link active" aria-current="page" routerLink="crud1">
+                    <span class="glyphicon glyphicon-list" id="span-U-{{item.id}}" style="background-color:#F0AD4E;border:1px solid black;border-radius:2px;padding:2px;cursor:pointer;"></span>
+                </a>
+            </td>
+            <td style="width:5%;text-align:center;">
+                <a class="nav-link active" aria-current="page" routerLink="crud1">
+                    <span class='glyphicon glyphicon-trash' id='span-D-{{item.id}}' style='background-color:#D9534F;border:1px solid black;border-radius:2px;padding:2px;cursor:pointer;'></span>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div style="text-align:center;">
+        <ul class='pagination pagination-sm' id='ulPaginacao'>
+            <li><a routerLink='#' class="pagina" onclick='montarTabela(1);'>&laquo;</a></li>
+            <li><a routerLink='crud1' class='pagina' onclick='montarTabela(1);'>1</a></li>
+            <li><a routerLink='crud1' class="pagina" onclick='montarTabela(2);'>2</a></li>
+            <li><a routerLink='crud1' class="pagina" onclick='montarTabela(3);'>3</a></li>
+            <li><a routerLink='crud1' class="pagina" onclick='montarTabela(4);'>4</a></li>
+            <li><a routerLink='crud1' class="pagina" onclick='montarTabela(5);'>5</a></li>
+            <li><a routerLink='crud1' class="pagina" onclick='montarTabela(5);'>&raquo;</a></li>
+        </ul>
+    </div>
+</div>
